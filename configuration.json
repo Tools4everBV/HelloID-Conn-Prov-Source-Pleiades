@@ -1,0 +1,261 @@
+{
+  "personMappings": [
+    {
+      "name": "Custom.ADELI",
+      "mode": "field",
+      "value": "ADELI",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.RPPS",
+      "mode": "field",
+      "value": "RPPS",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "ExternalId",
+      "mode": "field",
+      "value": "ExternalId",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "name": "Name.FamilyName",
+      "mode": "field",
+      "value": "LastNameBirth",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "name": "Name.FamilyNamePartner",
+      "mode": "field",
+      "value": "LastName",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "name": "Name.GivenName",
+      "mode": "field",
+      "value": "GivenName",
+      "validation": {
+        "required": true
+      }
+    }
+  ],
+  "contractMappings": [
+    {
+      "name": "Custom.codeEmploi",
+      "mode": "field",
+      "value": "Code_Emploi",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.codeFiliere",
+      "mode": "complex",
+      "value": "if(sourceContract.Code_Filiere){ Array.from(sourceContract.Code_Filiere)[0] }\r\nelse { null }",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.codeMetier",
+      "mode": "field",
+      "value": "Code_Metier",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.codeRegroupement",
+      "mode": "field",
+      "value": "Code_Regroupement",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.debutIninterruption",
+      "mode": "field",
+      "value": "Debut_Rel",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.dureeCDD",
+      "mode": "complex",
+      "value": "function dateDiffInDays(a, b) {\r\n    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds\r\n    return Math.round(Math.abs((b - a) / oneDay))\r\n}\r\n\r\nif(sourceContract.Type_contrat === \"CDD\" && sourceContract.Debut_Aff && sourceContract.Fin_Aff ){ \r\n    dateDiffInDays(new Date(sourceContract.Debut_Aff),new Date(sourceContract.Fin_Aff)) + 1\r\n}\r\nelse{ null }",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.emploi",
+      "mode": "field",
+      "value": "Libelle_Emploi",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.Filiere",
+      "mode": "field",
+      "value": "Libelle_Filiere",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.finIninterruption",
+      "mode": "field",
+      "value": "Fin_Rel",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.ininterruption",
+      "mode": "complex",
+      "value": "function formatDateMMDDYYYY(date) {\r\n    let ds = date.split('/');\r\n    return ds[1] + \"-\" + ds[0] + \"-\" + ds[2];\r\n}\r\n\r\nif(formatDateMMDDYYYY(sourceContract.Debut_Rel) !== sourceContract.Debut_Aff){ true }\r\nelse{ false }",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.isMedical",
+      "mode": "field",
+      "value": "is_Medical",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.metier",
+      "mode": "field",
+      "value": "Libelle_Metier",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Custom.regroupement",
+      "mode": "field",
+      "value": "Libelle_Regroupement",
+      "validation": {
+        "required": false
+      },
+      "convertToString": true
+    },
+    {
+      "name": "Department.DisplayName",
+      "mode": "field",
+      "value": "Libelle_UF",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "Department.ExternalId",
+      "mode": "field",
+      "value": "Code_UF",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "Details.Sequence",
+      "mode": "field",
+      "value": "Affectation_Principale",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "EndDate",
+      "mode": "field",
+      "value": "Fin_Aff",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "ExternalId",
+      "mode": "field",
+      "value": "Id",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "name": "Manager.ExternalId",
+      "mode": "field",
+      "value": "Manager_ExternalId",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "StartDate",
+      "mode": "field",
+      "value": "Debut_Aff",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "name": "Title.Code",
+      "mode": "field",
+      "value": "Code_Emploi",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "Title.ExternalId",
+      "mode": "field",
+      "value": "Code_Emploi",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "Title.Name",
+      "mode": "field",
+      "value": "Libelle_Emploi",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "name": "Type.Description",
+      "mode": "field",
+      "value": "Type_contrat",
+      "validation": {
+        "required": false
+      }
+    }
+  ]
+}
