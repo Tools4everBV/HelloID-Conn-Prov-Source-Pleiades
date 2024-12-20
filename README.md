@@ -43,7 +43,7 @@ Before Importing the connector you need to add custom fields in the HelloID Vaul
 Below the list of custom fields to add:
 
 <p align="left">
-  <img src="https://github.com/Tools4everBV/HelloID-Conn-Prov-Source-PLEIADES/raw/main/assets/Custom fields.png" width="500">
+  <img src="https://github.com/Tools4everBV/HelloID-Conn-Prov-Source-PLEIADES/raw/main/assets/Custom fields.png" width="300">
 </p>
 
 
